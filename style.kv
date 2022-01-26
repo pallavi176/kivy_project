@@ -1,0 +1,61 @@
+#:import utils kivy.utils
+<MyLayout>
+	
+	path:path
+
+	canvas.before:
+		Color:
+			rgba: utils.get_color_from_hex('#d9b38c')
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+
+		padding: 20
+		spacing: 10
+
+        Label:
+            text: "Path:"
+            size_hint: (.2, .2)
+            font_size: 32
+            #background_color: utils.get_color_from_hex('#ffe6e6')
+            background_color: utils.get_color_from_hex('#fa00df')
+        TextInput:
+            id: path
+            multiline:True
+            size_hint: (1, .3)
+            background_color: utils.get_color_from_hex('#FFA07A')
+
+		Button:
+			text: "Submit"
+			font_size: 32
+			size_hint: (.2, .2)
+			on_press: root.press()
+			#RGB - A
+			background_normal: ''
+			background_color: utils.get_color_from_hex('#cc66ff')
+
+		TextInput:
+            id: file_path
+            multiline:True
+            size_hint: (1, 1.6)
+            background_color: utils.get_color_from_hex('#FFA07A')
+
+		Button:
+			text: "Merge"
+			font_size: 32
+			size_hint: (.2, .2)
+			on_press: root.merge()
+			background_normal: ''
+			#background_color: (238/255.0,250/255.0,0/255.0,1)
+			background_color: utils.get_color_from_hex('#cc66ff')
+
+		TextInput:
+            id: msg
+            size_hint: (1, .4)
+            multiline:True
+            background_color: utils.get_color_from_hex('#FFA07A')
+
